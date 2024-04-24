@@ -1,3 +1,19 @@
 {
-    "apps": []
+    "name": "小基同學的ipa仓库",
+    "message": "❤欢迎添加小基同學的ipa源❤\r\n✔ipa大部分来源于互联网，小部分由本人二次打包✔",
+    "identifier": "xiaoji235.github.io",
+    "sourceURL": "https://raw.githubusercontent.com/xiaoji235/IPA-Store/main/ipa/test.json",
+    "apps": [
+        {
+            "name": "GoogleNews",
+            "bundleIdentifier": "com.google.GoogleDigitalEditions",
+            "version": "5.88",
+            "versionDate": "2023-12-08",
+            "size": 46596013,
+            "downloadURL": "https://github.com/swaggyP36000/TrollStore-IPAs/releases/download/12-08-2023/GoogleNews-5.88.ipa",
+            "developerName": "",
+            "localizedDescription": "",
+            "iconURL": "https://raw.githubusercontent.com/swaggyP36000/TrollStore-IPAs/main/icons/com.google.GoogleDigitalEditions.png"
+        },
+    ]
 }
