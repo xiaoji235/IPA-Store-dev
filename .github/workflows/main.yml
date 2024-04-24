@@ -32,6 +32,7 @@ jobs:
           git add .
           git commit -m "ipa应用商店更新合并" -a || true
           git commit -m "Add new JSON files" || echo "No changes to commit"
+          git pull --rebase origin master
           git push
 
       - name: Bark通知
