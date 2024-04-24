@@ -22,11 +22,12 @@ jobs:
 
       - name: 运行脚本
         run: python py/ipa.py
-
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
       - name: 提交文件
         run: |
-          git pull
           git config --local user.email "${{ secrets.USER_EMAIL }}"
           git config --local user.name "${{ secrets.USER_NAME }}"
           #echo "https://github.com/${{ github.repository }}:${{ secrets.REPO_TOKEN }}" > .git-credentials
@@ -34,8 +35,9 @@ jobs:
           git commit -m "ipa应用商店更新合并" -a || true
           git commit -m "Add new JSON files" || echo "No changes to commit"
           git push
-
-      - name: Bark通知
+          
+      - name: Telegram通知
         run: |
-          curl "https://api.day.app/{{ secrets.BARK_KEY }}/ipa应用商店更新合并完成!?icon=https://day.app/assets/images/avatar.jpg"
-         
+          curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+          -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
+          -d "text=ipa应用商店更新合并完成!分支：${{ github.ref }}"
