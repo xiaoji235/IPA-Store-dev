@@ -36,4 +36,4 @@ jobs:
           
       - name: Bark通知
         run: |
-          curl "https://api.day.app/${{ secrets.BARK_KEY }}/ipa应用商店更新合并完成!?icon=https://day.app/assets/images/avatar.jpg"
+          curl "https://api.day.app/${{ secrets.BARK_KEY }}/ipa应用商店更新合并完成!?icon=https://cdn.jsdelivr.net/gh/xiaoji235/IPA-Store/github.png"
